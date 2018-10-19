@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DIO - 去中心化的徵信社</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    .copyright {
+        background: #777;
+        color: #fff;
+        line-height: 40px;
+        margin: 1em 0 0 0;
+        text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center" style="font-style: italic">< D . I . O ></h1>
+          <h2 class="text-center" style="font-style: italic">區 塊 鏈 上 的 去 中 心 化 徵 信 社</h2>
+          <h2 class="text-center" style="font-style: italic">< 迪 . 奧 ></h2>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h4 class="text-center">甚麼是 `去中心化徵信社` ?</h4>
+          <hr/>
+          <center>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7NLCxHQ66I4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </center>
+          <p/>
+          <p class="text-center"> < D. I .O >  </p>
+          <p class="text-center">在區塊鏈上，一個無人、而自主運作的徵信社 <迪.奧> </p>
+          <p class="text-center"><span>&rArr; 以去中心化的手段，</span><span>解決了 <a href="https://hk.thenewslens.com/article/62075">"如何證明你媽就是你媽"</a> 的問題</span></p>
+        </div>
+      </div>
+
+      <p/><p/>
+      
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h4 class="text-center"><a href="how.html">How Does It Work ?</a></h4>
+          <hr/>
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>驗證請求</h3>
+          <hr/>
+          <div id="challengesToMe" class="panel-body">
+            <!-- Challengs LOAD HERE -->
+          </div>
+        </div>
+      </div>
+      
+      <br/><br/>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>待簽署的聲明</h3>
+          <hr/>
+          <div id="covenantsWaitingForMyEndorsement" class="panel-body">
+            <!-- Covenants LOAD HERE -->
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>與您有關的聲明</h3>
+          <hr/>
+          <div id="myCovenants" class="panel-body">
+            <!-- Covenants LOAD HERE -->
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+      <br/><br/>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>主張新的聲明</h3>
+          <hr/>
+          <div id="createCovenant" class="panel-body">
+            <span style="line-height: 32px;">聲明 : </span><br/><textarea id="covenantStatement" rows="4" cols="80" placeholder="(聲明的內容文字)"></textarea><br/>
+            <span style="line-height: 32px;">簽署人 : </span><input type="text" name="covenantEndorser" id="covenantEndorser" placeholder="(進行背書的簽署人地址)" size="40"></input><br/>
+            <span style="line-height: 32px;">付款 : </span><input type="text" name="covenantSetupRate" id="covenantSetupRate"></input> ether<br/>
+            <button id="btnCreateCovenant" class="btn btn-default btn-adopt" type="button">申請</button>
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>申請驗證</h3>
+          <hr/>
+          <div id="createChallenge" class="panel-body">
+            <span style="line-height: 32px;">挑戰 : </span><input type="text" name="addressBeingChallenged" id="addressBeingChallenged" placeholder="(被驗證人的地址)" size="40"></input><br/>
+            <span style="line-height: 32px;">驗證用密語 (只有握有正確私鑰的被驗證人才能讀到) : </span><br/><textarea name="challengePhrase" id="challengePhrase" rows="4" cols="80"  placeholder="(密語文字內容)"></textarea><br/>
+            <span style="line-height: 32px;">付款 : </span><input type="text" name="challengeRate" id="challengeRate"></input> ether<br/>
+            <button id="btnCreateChallenge" class="btn btn-default btn-adopt" type="button">申請</button>
+          </div>
+        </div>
+      </div>
+      
+      <br/><br/>
+
+      <div id="transferRow" class="row" style="display: none">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>Transfer (admin)</h3>
+          <hr/>
+          <div id="transferPanel" class="panel-body">
+            <span style="line-height: 32px;">To : </span><input type="text" name="transferTo" id="transferTo" placeholder="(account address)" size="40"></input><br/>
+            <span style="line-height: 32px;">Amount : </span><input type="text" name="transferAmount" id="transferAmount"></input> ether<br/>
+            <button id="btnTransfer" class="btn btn-default btn-adopt" type="button">transfer</button>
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+
+      <div id="setCovenantSetupRateRow" class="row" style="display: none">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>Set Covenant Setup Rate (admin)</h3>
+          <hr/>
+          <div id="setCovenantSetupRatePanel" class="panel-body">
+            <span style="line-height: 32px;">Covenant Setup Rate : </span><input type="text" name="setCovenantSetupRate" id="setCovenantSetupRate"></input> ether<br/>
+            <button id="btnSetCovenantSetupRate" class="btn btn-default btn-adopt" type="button">Modify</button>
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+      
+      <div id="setChallengeRateRow" class="row" style="display: none">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h3>Set Challenge Rate (admin)</h3>
+          <hr/>
+          <div id="setChallengeRatePanel" class="panel-body">
+            <span style="line-height: 32px;">Covenant Setup Rate : </span><input type="text" name="setChallengeRate" id="setChallengeRate"></input> ether<br/>
+            <button id="btnSetChallengeRate" class="btn btn-default btn-adopt" type="button">Modify</button>
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+      
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <hr/>
+          <div id="createChallenge" class="panel-body">
+            <span class="text-center" style="line-height: 32px;">※ 請注意 : 您需要安裝 MetaMask 於您的瀏覽器才能運作喔!!</span> <span>(或是請使用 DApp 瀏覽器 (例如 Mist) 連到本站網址)</span>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+    <div class="copyright">
+    <span>現在徵信社內 : </span> <span>案件數量 </span><span id="numCovenants">32767</span> | <span> 驗證請求數量 </span><span id="totalChallenges">ˊ65535</span>
+    <br/>
+    <span>&copy; 2011-2018 研鼎智能 / PAPAGO INC.</span><div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/GOLiFEpage/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=1170&amp;href=https%3A%2F%2Fwww.facebook.com%2FGOLiFEpage%2F&amp;layout=button_count&amp;locale=zh_TW&amp;sdk=joey&amp;share=false&amp;show_faces=true&amp;size=small"><span style="vertical-align: bottom; width: 77px; height: 20px;"><iframe name="f3be22ae8c5e0dc" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v3.0/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FtrnHszv6jVd.js%3Fversion%3D42%23cb%3Df3f06c780f20ff4%26domain%3Dwww.goyourlife.com%26origin%3Dhttp%253A%252F%252Fwww.goyourlife.com%252Ff3385b890488bb4%26relation%3Dparent.parent&amp;container_width=1170&amp;href=https%3A%2F%2Fwww.facebook.com%2FGOLiFEpage%2F&amp;layout=button_count&amp;locale=zh_TW&amp;sdk=joey&amp;share=false&amp;show_faces=true&amp;size=small" style="border: none; visibility: visible; width: 77px; height: 20px;" class=""></iframe></span></div>
+    </div>
+
+    <div id="challengeTemplate" style="display: none;">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default panelChallenge">
+          <div class="panel-heading">
+            <h4 class="panel-title challengeNumber">第 n 則</h4>
+          </div>
+          <div class="panel-body" style="line-height: 26px">
+            <strong>挑戰者</strong> : <span class="challengeChallenger">0xdeadbeef</span><br/>
+            <strong>密語</strong> : <span class="challengePhrase">Lorem ipsum</span><br/>
+            <strong>時間</strong> : <span class="challengeCreateTime">2018-10-11 12:34.56</span><br/><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="covenantTemplate" style="display: none;">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default panelCovenant">
+          <div class="panel-heading">
+            <h4 class="panel-title covenantID">第 n 則</h4>
+          </div>
+          <div class="panel-body" style="line-height: 26px">
+            <strong>立約人</strong> : <span class="covenantContractor">0xdeadbeef</span><br/>
+            <strong>見證人 / 簽署人</strong> : <span class="covenantEndorser">0x12345678</span><br/>
+            <strong>聲明</strong> : <br/>
+            <span class="border covenantStatement">Lorem ipsum</span><br/>
+            <strong>狀態</strong> : <span class="covenantState">成立</span><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="covenantWaitingTemplate" style="display: none;">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default panelCovenantWaiting">
+          <div class="panel-heading">
+            <h4 class="panel-title covenantID">第 n 則</h4>
+          </div>
+          <div class="panel-body" style="line-height: 26px">
+            <strong>立約人</strong> : <span class="covenantContractor">0xdeadbeef</span><br/>
+            <strong>見證人 / 簽署人</strong> : <span class="covenantEndorser">0x12345678</span><br/>
+            <strong>聲明</strong> : <br/>
+            <span class="border covenantStatement">Lorem ipsum</span><br/>
+            <strong>狀態</strong> : <span class="covenantState">成立</span><br/>
+            <button class="btn btn-default btnEndorseCovenantWaiting" type="button" data-id="0">簽署</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

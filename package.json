@@ -1,0 +1,22 @@
+{
+  "name": "DIO",
+  "version": "1.0.0",
+  "description": "DIO - Decentralized Investigative Organization",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jethro E. Lee",
+  "license": "",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  },
+  "dependencies": {
+    "truffle-privatekey-provider": "^0.1.0",
+    "web3": "^1.0.0-beta.36"
+  }
+}
