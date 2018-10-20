@@ -8,6 +8,8 @@ http://dio.goyourlife.com
 ## &lt; 迪. 奧 &gt; &rArr; 區塊鏈上的去中心化徵信社
 位在區塊鏈上的一個無人、而自主運作的新型態組織。
 
+http://dio.goyourlife.com
+
 <br/>
 
 ## Copyright and License
