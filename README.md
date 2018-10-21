@@ -1,4 +1,4 @@
-# &lt; D.I.O &gt; 
+# &lt; D. I. O &gt; 
 Decentralized Investigative Organization on Ethereum blockchain.
 
 http://dio.goyourlife.com
